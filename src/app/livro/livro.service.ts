@@ -19,7 +19,6 @@ export class LivroService {
     }
 
     buscaPorId(id: string): Observable<any> {
-        console.log(this.urlById+id);
         return this.http
             .get(this.urlById + id)
             .map(res => res.json());
