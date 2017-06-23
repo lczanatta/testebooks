@@ -25,13 +25,14 @@ export class ListagemComponent {
     constructor(livroService: LivroService){
         
         this.livroService = livroService;
-        
+        this.busca(0,event,"Angular 2");
        
     }
 
     busca(pagination:number, event, termos:string=''){
-        
-        event.preventDefault();
+        if(event){
+            event.preventDefault();
+        }
         this.event = event;
         if(termos||this.buscaString){         
             this.buscaString = termos;            
