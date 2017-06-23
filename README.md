@@ -1,6 +1,43 @@
-# TesteCli
+# Sobre
+O sistema é desenvolvido em Angular 2. Bootstrap.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+Ele tem como função acessar a API Books da Google. Buscar livros, e possibilitar o usuário a curtir os livros que ele gosta.
+
+# Estrutura
+
+Listagem:
+Esse objeto/pagina listam os livros que foram encontrados na API da Google.
+
+Livro:
+Este é o objeto que é instanciado para cada livro encontrado.
+Ele que mantem os dados do objeto.
+
+LivroService:
+Aqui esta concentrado todas as funções de busca de livros. 
+Preferi centralizar esse tipo de funções, para caso seja necessário trocar ou arrumar a string de conexão com a Google, isso seja realizado em apenas um lugar.
+
+LivroDetalhe:
+Ao clicar na capa do livro na listagem. O usuário é direcionado para essa pagina/objeto.
+Ela mostra mais detalhes sobre o livro selecionado, assim como o usuário pode curtir o livro.
+
+Painel:
+Ele gera os painéis que englobam as capas na listagem.
+
+Botão:
+Um teste em automatizar as funções dos botões. Como acionar alertas, avisos. Função a ser utilizada futuramente.
+
+# Próximos passos
+Desenvolver o backend para possibilitar logins. 
+Retirar a gravação dos curtis do local storage e adicionar a um banco de dados.
+Possibilitar os usuários gerar resenhas e dar notas para livros.
+Compartilhar quais livros a pessoa gostou.
+Adicionar o teste integrado.
+Adicionar deploy continuo usando Trevis CI.
+Pagina com todos o livros que a pessoal curtiu.
+
+# Obs
+É um site criado para teste.
+Iriei usar para aprender e testar novas funcionalidades com o Angular 2. Aceito sugestões de melhorias.
 
 ## Development server
 
@@ -15,14 +52,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
-
+//A ser criado ainda
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
