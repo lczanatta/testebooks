@@ -19,13 +19,15 @@ export class ListagemComponent {
     total:number = 0;
     p: number = 1;
     event;
+    stringBusca:string = "";
     
 
     
     constructor(livroService: LivroService){
         
         this.livroService = livroService;
-        this.busca(0,event,"Angular 2");
+        this.stringBusca = "Angular 2";
+        this.busca(0,event,this.stringBusca);
        
     }
 
@@ -33,6 +35,7 @@ export class ListagemComponent {
         if(event){
             event.preventDefault();
         }
+        
         this.event = event;
         if(termos||this.buscaString){         
             this.buscaString = termos;            
@@ -48,7 +51,7 @@ export class ListagemComponent {
                         if(livro.volumeInfo.imageLinks){
                             livroAux.img = livro.volumeInfo.imageLinks.thumbnail;
                         }else{
-                            livroAux.img = '../../img/noimage.png';
+                            livroAux.img = 'http://i.imgur.com/hec3WZZ.png';
                         }
                         this.livros.push(livroAux);                        
                     });                    
