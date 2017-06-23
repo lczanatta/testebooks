@@ -1,0 +1,52 @@
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Bucador de Livros</h1>
+    </div>
+
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            <form (submit)="p=1;busca(0, $event,textoProcurado.value)">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </span>
+                    <input #textoProcurado class="form-control" placeholder="Busca Livro">
+                </div>
+            </form>
+        </div> <!-- fim col-md-12 -->
+    </div> <!-- fim row -->
+    <br>
+
+    <div>
+        <painel #painel 
+                *ngFor="let livro of livros | paginate: { id: 'foo', itemsPerPage: 12, currentPage: p, totalItems: total }" 
+                titulo="{{livro.title}}" 
+                busca="{{textoProcurado.value}}"
+                class="col-md-4">
+            <a [routerLink] = "['/livro',livro.id,textoProcurado.value]">
+                <livro  img="{{livro.img}}" title="{{livro.title}}"></livro>
+            </a>
+        </painel>        
+    </div>
+    <br>
+    <div>
+        <pagination-controls class="minha-paginacao"  id="foo"
+                        (pageChange)="pagina($event)"
+                        maxSize="9"
+                        directionLinks="true"
+                        autoHide="true"
+                        previousLabel="anterior"
+                        nextLabel="próximo"
+                        screenReaderPaginationLabel="Pagination"
+                        screenReaderPageLabel="page"
+                        screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+    </div>
+
+    
+
+</div>

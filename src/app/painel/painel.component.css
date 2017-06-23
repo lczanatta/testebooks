@@ -1,0 +1,22 @@
+.efeito {
+
+    box-shadow: 2px 2px 15px;
+}
+
+.panel-heading {
+    height: 3.5em;
+    white-space: normal;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 5px 5px;
+}
+
+.panel-body{
+    height: 230px;
+}
+.panel-heading p{
+    text-overflow: clip;
+    font-size: 1em;
+    margin-bottom: 3px;
+    
+}

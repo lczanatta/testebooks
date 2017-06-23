@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 [innerHTML]='livro.title'></h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 img-div">
+            <img [src]="livro.img" class="img-responsive center-block">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 ">
+            
+            <ul style="list-style-type:none" >
+                <li>
+                    <button (click)="curtir()" 
+                            type="button" class="btn {{classe}}">
+                        <span class="glyphicon glyphicon-thumbs-up" 
+                            aria-hidden="true"></span> {{curtirTexto}} 
+                    </button>
+                </li>
+                <li>
+                    <label>Autor:</label>
+                    <p>{{livro.autor}}</p>
+                </li>                
+                <li>
+                    <label>Ano:</label>
+                    <p>{{livro.ano}}</p>
+                </li>
+                <li>
+                    <label>Nº de páginas:</label>
+                    <p>{{livro.paginas}}</p>
+                </li>
+                <li>
+                    <label>Publicadora:</label>
+                    <p>{{livro.publicador}}</p>
+                </li>
+                <li>
+                    <label>Categoria:</label>
+                    <p>{{livro.Categoria}}</p>
+                </li>
+                <li>
+                    <label>Descrição:</label>
+                    <div [innerHTML]="livro.descricao" class="livro-desc" ></div>
+                </li>
+                                
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+</div>
