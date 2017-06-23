@@ -30,6 +30,11 @@ export class LivroDetalheComponent  {
         this.livroService = livroService;
         this.route = route;
         this.router = router;
+
+        if(this.curtidos==null||this.curtidos==undefined){
+            this.curtidos = [];
+        }
+
         this.route.params.subscribe(params =>{
             this.livro.id = params['id'];
             this.busca = params['busca'];
@@ -57,7 +62,7 @@ export class LivroDetalheComponent  {
                 if(this.curtido){
 
                     this.classe = 'btn-danger';
-                    this.curtirTexto ='Descurtir';
+                    this.curtirTexto ='Curtiu';
                 }else{
                     this.classe = 'btn-success';
                     this.curtirTexto ='Curtir';
@@ -81,25 +86,20 @@ export class LivroDetalheComponent  {
         });
         this.livro.descricao = this.livro.descricao.charAt(0).toUpperCase() + this.livro.descricao.slice(1);
 
-    }
-
-    
-        
-
-    
+    }   
 
     curtir(){
         let lista = this.curtidos;
         if(this.curtidos.includes(this.livro.id)){            
             let index = lista.indexOf(this.livro.id);
             lista.splice(index,1);
-            this.classe = 'btn-success';
             this.curtirTexto ='Curtir';
+            this.curtido = false;
         }else{
             
             lista.push(this.livro.id);
-            this.classe = 'btn-danger';
-            this.curtirTexto ='Descurtir';
+            this.curtirTexto ='Curtiu';
+            this.curtido = true;
             
         }
         this.curtidos = lista;

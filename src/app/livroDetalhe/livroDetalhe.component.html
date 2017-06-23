@@ -9,8 +9,9 @@
             <ul style="list-style-type:none" >
                 <li>
                     <button (click)="curtir()" 
-                            type="button" class="btn {{classe}}">
-                        <span class="glyphicon glyphicon-thumbs-up" 
+                            type="button" class="btn" [ngClass]="{'btn-default':!curtido,'btn-success':curtido}" >
+                        <span class="glyphicon glyphicon-thumbs-up"
+
                             aria-hidden="true"></span> {{curtirTexto}} 
                     </button>
                 </li>
